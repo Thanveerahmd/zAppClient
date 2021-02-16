@@ -1,0 +1,23 @@
+enum Environment{DEV,QA,PROD,STAGE}
+
+///bottom navigation bar types
+enum HomeTabs {
+    HOME,NOTIFICATION,PROFILE
+}
+
+enum HomePages {
+    HOME,CERTIFICATION,KEYCODE,SEARCH_INSTRUCTOR,SEARCH_RESULTS,REQUESTS,PURCHASE_KEYCODE, ORDER_SUMMARY1 ,ORDER_SUMMARY2, BILLING_INFORMATION1 , BILLING_INFORMATION2
+}
+
+///bottom navigation bar types
+enum RequestTabs {
+    ACTIVE,PENDING,COMPLETED
+}
+
+enum PurchaseBrand  {
+    AMERICAN_HEART_ASSOCIATION,RED_CROSS
+}
+
+enum PaymentMethod  {
+    PAYPAL,STRIPE
+}
