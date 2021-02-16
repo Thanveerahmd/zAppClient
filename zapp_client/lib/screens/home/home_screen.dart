@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             case HomeTabs.HOME:
               return  StreamBuilder(
                 stream: _contentBloc.homePageChanged,
-                  initialData: HomePages.REQUESTS,
+                  initialData: HomePages.HOME,
                 builder: (context, AsyncSnapshot<HomePages> snapshotData) {
                   switch (snapshotData.data){
                     case HomePages.HOME:
@@ -98,8 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
     bottomNavigationBar: StreamBuilder(
         stream: _contentBloc.navigationEvent,
         builder: (context, AsyncSnapshot<int> snapshot) {
-          final double height = _height * 0.0287;
-          final double width = _width * 0.074;
+          final double height = _height * 33/812;
+          final double width = _width * 18/375;
           return Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
@@ -122,8 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 items: [
                   BottomNavigationBarItem(
                     activeIcon: SvgPicture.asset(
-                      HOME_ICON,
-                      color: _themeUtils.getColor(zappStrings.ACTIVE_ICON),
+                      HOME_SELECTED_ICON,
                       height: height,
                       width: width,
                     ),
@@ -132,32 +131,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: height,
                       width: width,
                     ),
-                    title: Text(
-                      '.',
-                      style: TextStyle(fontWeight: FontWeight.w600,fontSize: 25),
-                    ),
+                    title:SizedBox.shrink(),
                   ),
                   BottomNavigationBarItem(
                     activeIcon: SvgPicture.asset(
-                      NOTIFICATION_ICON,
+                      NOTIFICATION_SELECTED_ICON,
                       height: height,
                       width: width,
-                      color: _themeUtils.getColor(zappStrings.ACTIVE_ICON),
                     ),
                     icon: SvgPicture.asset(
                       NOTIFICATION_ICON,
                       height: height,
                       width: width,
                     ),
-                    title: Text(
-                      '.',
-                      style: TextStyle(fontWeight: FontWeight.w600 ,fontSize: 25),
-                    ),
+                    title: SizedBox.shrink(),
                   ),
                   BottomNavigationBarItem(
                     activeIcon: SvgPicture.asset(
-                      PROFILE_ICON,
-                      color: _themeUtils.getColor(zappStrings.ACTIVE_ICON),
+                      PROFILE_SELECTED_ICON,
                       height: height,
                       width: width,
                     ),
@@ -166,10 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: height,
                       width: width,
                     ),
-                    title: Text(
-                      '.',
-                      style: TextStyle(fontWeight: FontWeight.w600,fontSize: 25),
-                    ),
+                    title: SizedBox.shrink(),
                   ),
                 ],
                 onTap: (index) => _contentBloc.setNavigationEvent.add(index),

@@ -59,3 +59,9 @@ const String HOME_ICON = 'assets/icons/home/home.svg';
 const String NOTIFICATION_ICON = 'assets/icons/home/bell.svg';
 ///PROFILE ICON
 const String PROFILE_ICON = 'assets/icons/home/user.svg';
+/// HOME ICON
+const String HOME_SELECTED_ICON = 'assets/icons/home/homeSelected.svg';
+///NOTIFICATION ICON
+const String NOTIFICATION_SELECTED_ICON = 'assets/icons/home/bellSelected.svg';
+///PROFILE ICON
+const String PROFILE_SELECTED_ICON = 'assets/icons/home/userSelected.svg';
